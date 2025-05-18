@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kodeasy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .example {
+      font-style: italic;
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .hint-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 250px;
+      padding: 15px;
+      background-color: #e8f0fe;
+      border: 1px solid #90caf9;
+      border-radius: 5px;
+    }
+
+    .hint-box h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>00101110 00101101 00101101 00101110 00100000 00101110 00101101 00100000 
+00101110 00101110 00101110 00100000 00101110 00101110 00101110 00100000 
+00101110 00101101 00101101 00100000 00101101 00101101 00101101 00100000 
+00101110 00101101 00101110 00100000 00101101 00101110 00101110 00100000 
+00101101 00101110 00101101 00100000 00101101 00101101 00101101 00100000 
+00101101 00101110 00101110 00100000 00101110 00100000 00101110 00101101 
+00100000 00101110 00101110 00101110 00100000 00101101 00101110 00101101 
+00101101</h2>
+  <p class="example">ครึ่งทางละๆ อันนี้แปลนิดหน่อย สู้ๆเด้อ</p>
+
+  <input type="text" id="userInput" placeholder="พิมพ์คำตอบที่นี่...">
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div class="output" id="outputText"></div>
+</div>
+
+<div class="hint-box">
+  <h4>นิดหน่อย...แหละมั้ง</h4>
+</div>
+
+<script>
+  function checkAnswer() {
+    const userInput = document.getElementById('userInput').value;
+    const output = document.getElementById('outputText');
+
+    if (userInput === "passwordkodeasy") {
+      output.textContent = "✅ คำตอบถูกต้อง!";
+      output.style.color = "green";
+      window.location.href = "3rd.html"
+    } else if(userInput === "") {
+      output.textContent = `อย่าพึ่งท้อไอหนุ่มม`
+    } else {
+      output.textContent = `ผิดตรงไหนป่าว ดูดีๆ`;
+      output.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
